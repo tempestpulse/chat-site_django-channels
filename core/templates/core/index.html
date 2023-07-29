@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+   <div class="col-md-6 col-lg-5 col-xl-4 mb-4 mb-md-0">
+
+        <table class="table table-borderless">
+          <tbody>
+            {% for user in users %}
+            <tr>
+              <td><a href="{% url 'core:chat-page' username=user.username %}">{{user.username}}</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+  </div>
+
+{% endblock %}
+
